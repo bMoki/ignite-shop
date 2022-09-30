@@ -4,8 +4,6 @@ import { styled } from ".";
 
 export const Overlay = styled(Dialog.Overlay, {
     position: 'fixed',
-    // width: '100vw',
-    //height: '100vh',
     inset: 0,
 
     '&:[data-state="open"]': {
