@@ -1,6 +1,5 @@
-import { GetServerSideProps, GetStaticPaths } from 'next';
+import { GetServerSideProps } from 'next';
 import Image from 'next/future/image';
-import { useState } from 'react';
 import Stripe from 'stripe';
 import { stripe } from '../../lib/stripe';
 import { ImageContainer, ProductContainer, ProductDetails } from '../../styles/pages/product';
@@ -49,14 +48,6 @@ export default function Product({ product }: ProductProps) {
     )
 }
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//     return {
-//         paths: [],
-//         fallback: true,
-//     }
-// }
-
-
 export const getServerSideProps: GetServerSideProps<any, { id: string }> = async ({ params }) => {
     const productId = params.id;
     const product = await stripe.products.retrieve(productId, {
@@ -82,6 +73,5 @@ export const getServerSideProps: GetServerSideProps<any, { id: string }> = async
 
             }
         },
-        //revalidate: 60 * 60 * 1, // 1 hora
     }
 }
