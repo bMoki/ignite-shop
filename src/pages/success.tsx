@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import Stripe from "stripe";
 import { useShoppingCart } from "use-shopping-cart";
 import { stripe } from "../lib/stripe";
-import { ProductDetails } from "../styles/pages/product";
 import { ImageContainer, SuccessContainer } from "../styles/pages/success";
 
 interface SuccessProps {
@@ -43,18 +42,6 @@ export default function Success({ customerName, products }: SuccessProps) {
                 <p>
                     Uhuul <strong>{customerName}</strong>, sua compra de {products.length} camisetas já está a caminho da sua casa.
                 </p>
-                {/* {products.map(product => (
-                    <>
-                        <ImageContainer>
-                            <Image src={product.imageUrl} width={120} height={110} alt='' />
-                        </ImageContainer>
-                        <p>
-                            Uhuul <strong>{customerName}</strong>, sua <strong>{product.name}</strong> já está a caminho da sua casa.
-                        </p>
-                    </>
-                ))} */}
-
-
                 <Link href={"/"}>
                     Voltar ao catálogo
                 </Link>

@@ -1,4 +1,3 @@
-import { $$PropertyValue } from "@stitches/react";
 import { styled } from "..";
 
 export const SuccessContainer = styled('main', {
